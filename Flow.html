@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mermaid Flowchart</title>
+    <!-- Include Mermaid.js from CDN -->
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <h1>EXAMPLE: Work Package Two Enhanced Ethics Procedure Flow Chart</h1>
+    <!-- Mermaid container -->
+    <div class="mermaid">
+        flowchart TD
+    A{Risk Assessment and Impact Audit RAIA One} --> B(Is it appropriate to develop IC procedures?)
+B --> |Y| C(Are informed consent procedures enhanced? \n☐ Documents translated\n☐ Documents piloted for cultural understanding\n☐ PIS doesn't overstate benefits of research\n☐ Support signposted on PIS\n☐ Country based contact established for withdrawal request) 
+C --> |N| D(Enhance IC procedures)
+D --> C
+C --> |Y| E(Have all RAs completed training in distress recognition?)
+E --> |Y| F{Risk Assessment and Impact Audit RAIA TWO}
+E --> |N| G(Complete training)
+G --> F
+F --> H(Does updated RAIA signal it is appropriate to collect data?)
+H --> |Y| I(Are data collection methods suitable in current context? \n☐ Interview schedule translated \n☐ Interview schedule piloted \n☐ Survey translated \n☐ Survey piloted)
+H --> |N| R(Adapt data collection methods)
+R --> I
+I --> |N| R
+I --> |Y| J(Have all risk measures for privacy been checked? \n☐ Anonymity by design \n☐ Encryption planned \n☐ Access control \n☐ Do not log user IP address \n☐ Audit points planned)
+J --> |Y| K{Risk Assessment and Impact Audit RAIA THREE}
+J --> |N| L(Check risk mitigation)
+L --> K
+K --> M(Is it appropriate to analyse data?)
+M --> |Y: Analyse data| N(Have findings been member checked?)
+M --> |N| O(Pause data analysis until context change)
+O --> K
+N --> |Y| P[PROGRESSION TO WORK PACKAGE THREE]
+N --> |N| Q(Complete member checking)
+Q --> P
+    </div>
+</body>
+</html>
